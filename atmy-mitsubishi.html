@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atmy — Marketing Resmi Mitsubishi Tangerang</title>
+  <meta name="description" content="Atmy, marketing resmi Mitsubishi Tangerang. Lihat katalog Xpander, Destinator, Xforce, Pajero Sport, Triton hingga kendaraan niaga. Harga terbaik, kredit mudah, konsultasi cepat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============ TOKENS ============ */
+    :root {
+      --red: #E60012;
+      --red-dark: #B8000E;
+      --black: #0F0F0F;
+      --ink: #1A1A1A;
+      --gray-900: #2A2A2A;
+      --gray-600: #6B6B6B;
+      --gray-300: #D4D4D4;
+      --gray-100: #F5F5F5;
+      --white: #FFFFFF;
+      --max-w: 1240px;
+      --pad-x: clamp(20px, 5vw, 64px);
+      --radius: 4px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+      --t: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --stage: radial-gradient(120% 120% at 70% 15%, #fdfdfd 0%, #eef0f2 55%, #dde1e6 100%);
+      --stage-dark: radial-gradient(120% 120% at 70% 10%, #2b323c 0%, #1b2027 60%, #12161c 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Archivo', sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+    /* ============ TOP BAR ============ */
+    .topbar {
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 0;
+      font-size: 12px;
+    }
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+    .topbar-info {
+      display: flex;
+      gap: 24px;
+      color: rgba(255,255,255,0.7);
+    }
+    .topbar-info span { display: flex; align-items: center; gap: 6px; }
+    @media (max-width: 720px) {
+      .topbar-info { display: none; }
+    }
+    .m-logo { width: 22px; height: 22px; flex-shrink: 0; }
+    .m-logo path { fill: var(--red); }
+    /* ============ HEADER ============ */
+    .header {
+      border-bottom: 1px solid var(--gray-300);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.96);
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'Archivo', sans-serif;
+    }
+    .brand .m-logo { width: 36px; height: 36px; }
+    .brand-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+    }
+    .brand-divider { width: 1px; height: 22px; background: var(--gray-300); }
+    .brand-atmy { color: var(--red); font-weight: 900; font-size: 22px; letter-spacing: 0.08em; }
+    nav.main-nav { display: flex; gap: 32px; font-weight: 500; font-size: 14px; }
+    nav.main-nav a { position: relative; padding: 6px 0; transition: color var(--t); }
+    nav.main-nav a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--red); transition: width var(--t);
+    }
+    nav.main-nav a:hover { color: var(--red); }
+    nav.main-nav a:hover::after { width: 100%; }
+    .cta-btn {
+      background: var(--red); color: var(--white);
+      padding: 12px 24px; border-radius: var(--radius);
+      font-weight: 600; font-size: 14px; border: none; cursor: pointer;
+      transition: all var(--t); font-family: inherit; letter-spacing: 0.02em;
+    }
+    .cta-btn:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(230, 0, 18, 0.3); }
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; transition: var(--t); }
+    @media (max-width: 900px) {
+      nav.main-nav {
+        position: fixed; top: 0; right: -100%; height: 100vh; width: 80%; max-width: 320px;
+        background: var(--white); flex-direction: column; padding: 80px 32px 32px; gap: 24px;
+        box-shadow: var(--shadow-lg); transition: right var(--t); z-index: 200;
+      }
+      nav.main-nav.open { right: 0; }
+      .menu-toggle { display: block; z-index: 201; position: relative; }
+      .cta-btn.header-cta { display: none; }
+    }
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      padding: 84px 0 96px;
+      background: radial-gradient(circle at 80% 20%, rgba(230,0,18,0.06) 0%, transparent 50%), var(--white);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; right: -10%; width: 50%; height: 100%;
+      background: var(--gray-100); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%); z-index: 0;
+    }
+    .hero .container {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 24px;
+    }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--red); }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; margin-bottom: 24px; }
+    .hero h1 .accent { color: var(--red); }
+    .hero p { font-size: 18px; color: var(--gray-600); margin-bottom: 36px; max-width: 520px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-outline {
+      background: transparent; color: var(--ink); border: 1.5px solid var(--ink);
+      padding: 12px 24px; border-radius: var(--radius); font-weight: 600; font-size: 14px;
+      cursor: pointer; transition: all var(--t); font-family: inherit;
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--white); }
+    .hero-stats { display: flex; gap: 40px; margin-top: 44px; }
+    .hero-stat .num { font-family: 'Archivo'; font-weight: 900; font-size: 32px; color: var(--ink); }
+    .hero-stat .lbl { font-size: 12px; color: var(--gray-600); letter-spacing: 0.04em; }
+    .hero-visual {
+      aspect-ratio: 4/3; border-radius: var(--radius); background: var(--stage);
+      display: flex; align-items: flex-end; justify-content: center;
+      position: relative; overflow: hidden; box-shadow: var(--shadow);
+    }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-visual .fallback { width: 92%; }
+    .hero-tag {
+      position: absolute; top: 16px; left: 16px; z-index: 2;
+      background: rgba(15,15,15,0.85); color: #fff; backdrop-filter: blur(4px);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 7px 12px; border-radius: 2px; display: flex; align-items: center; gap: 8px;
+    }
+    .hero-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+    @media (max-width: 900px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero::before { display: none; }
+      .hero-stats { gap: 28px; }
+    }
+    /* ============ CATALOG ============ */
+    .catalog { padding: 100px 0; background: var(--white); }
+    .section-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 40px; gap: 32px; flex-wrap: wrap;
+    }
+    .section-title { font-size: clamp(32px, 4vw, 48px); font-weight: 900; }
+    .section-subtitle { color: var(--gray-600); font-size: 15px; max-width: 420px; }
+    .tabs { display: inline-flex; background: var(--gray-100); padding: 4px; border-radius: var(--radius); margin-bottom: 44px; }
+    .tab-btn {
+      background: none; border: none; padding: 12px 28px;
+      font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 14px;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-600);
+      cursor: pointer; border-radius: 2px; transition: all var(--t);
+    }
+    .tab-btn.active { background: var(--ink); color: var(--white); }
+    .catalog-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;
+    }
+    .product-card {
+      background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius);
+      overflow: hidden; cursor: pointer; transition: transform var(--t), box-shadow var(--t), border-color var(--t), opacity .45s ease;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--ink); }
+    .product-image {
+      aspect-ratio: 16/10; background: var(--stage);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .product-image img.photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .product-image .fallback { width: 96%; height: 96%; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .product-card:hover .product-image img.photo,
+    .product-card:hover .product-image .fallback { transform: scale(1.06); }
+    .product-badge {
+      position: absolute; top: 12px; left: 12px; background: var(--red); color: var(--white);
+      padding: 4px 10px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; border-radius: 2px; z-index: 2;
+    }
+    .product-badge.ev { background: #00843D; }
+    .product-badge.pop { background: var(--ink); }
+    .product-info { padding: 22px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .product-category { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-600); }
+    .product-name { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink); }
+    .product-tagline { font-size: 13px; color: var(--gray-600); font-style: italic; margin-top: 2px; min-height: 34px; }
+    .product-price { font-size: 14px; color: var(--gray-600); margin-top: 6px; }
+    .product-price strong { color: var(--ink); font-weight: 700; }
+    .product-cta {
+      margin-top: 16px; display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: var(--red); transition: gap var(--t);
+    }
+    .product-card:hover .product-cta { gap: 14px; }
+    /* exit animation when a detail is opened */
+    .grid-wrap { transition: opacity .35s ease; }
+    .catalog-grid.exiting .product-card {
+      opacity: 0;
+      transform: translateY(24px) scale(.94);
+      pointer-events: none;
+    }
+    .catalog-grid.exiting .product-card:nth-child(odd) { transform: translateX(-40px) scale(.94); }
+    .catalog-grid.exiting .product-card:nth-child(even) { transform: translateX(40px) scale(.94); }
+    .catalog-grid.exiting .product-card.is-selected { opacity: 1; transform: scale(1.02); }
+
+    /* ============ DETAIL VIEW ============ */
+    .detail-view { display: none; }
+    .detail-view.open { display: block; animation: detailIn .55s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes detailIn { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+    .detail-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; gap: 16px; }
+    .detail-breadcrumb { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-600); font-weight: 600; }
+    .detail-breadcrumb b { color: var(--ink); }
+    .detail-close {
+      display: inline-flex; align-items: center; gap: 8px; cursor: pointer; border: 1px solid var(--gray-300);
+      background: var(--white); padding: 10px 16px; border-radius: var(--radius); font-weight: 600; font-size: 13px;
+      transition: all var(--t); font-family: inherit;
+    }
+    .detail-close:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .detail-main {
+      display: grid; grid-template-columns: 1.15fr 1fr; gap: 0;
+      border: 1px solid var(--gray-300); border-radius: 8px; overflow: hidden; background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .detail-stage {
+      position: relative; background: var(--stage-dark); min-height: 420px;
+      display: flex; align-items: center; justify-content: center; padding: 32px; overflow: hidden;
+    }
+    .detail-stage::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(60% 40% at 50% 92%, rgba(0,0,0,.35), transparent 70%);
+      pointer-events: none;
+    }
+    .detail-stage .stage-img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+    .detail-stage .stage-badge {
+      position: absolute; top: 22px; left: 22px; z-index: 3; background: var(--red); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; padding: 6px 12px; border-radius: 2px;
+    }
+    .detail-stage .stage-badge.ev { background: #00843D; }
+    .detail-watermark {
+      position: absolute; bottom: -18px; right: 16px; z-index: 0;
+      font-family: 'Archivo'; font-weight: 900; font-size: clamp(60px, 9vw, 120px);
+      color: rgba(255,255,255,0.05); letter-spacing: -0.04em; white-space: nowrap; user-select: none;
+    }
+    .detail-body { padding: 40px; display: flex; flex-direction: column; }
+    .detail-cat { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); font-weight: 700; }
+    .detail-name { font-size: clamp(34px, 4.5vw, 52px); font-weight: 900; margin: 8px 0 6px; }
+    .detail-tagline { font-size: 16px; color: var(--gray-600); font-style: italic; margin-bottom: 22px; }
+    .detail-price-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding-bottom: 22px; border-bottom: 1px solid var(--gray-300); margin-bottom: 22px; }
+    .detail-price-row .from { font-size: 13px; color: var(--gray-600); }
+    .detail-price-row .price { font-family: 'Archivo'; font-weight: 900; font-size: 30px; color: var(--ink); }
+    .detail-price-row .note { font-size: 12px; color: var(--gray-600); width: 100%; }
+    /* chips */
+    .detail-chips-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 12px; }
+    .detail-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 8px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      background: var(--gray-100); border: 1px solid transparent; color: var(--ink);
+      padding: 10px 14px; border-radius: 40px; font-size: 13px; font-weight: 600;
+      transition: all var(--t); font-family: inherit;
+    }
+    .chip svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .chip:hover { background: #fff; border-color: var(--ink); transform: translateY(-2px); }
+    .chip.active { background: var(--red); color: #fff; border-color: var(--red); }
+    .chip.active svg path, .chip.active svg circle, .chip.active svg rect, .chip.active svg line { stroke: #fff; }
+    .chip-detail {
+      margin-top: 14px; background: var(--gray-100); border-left: 3px solid var(--red);
+      padding: 14px 16px; border-radius: 4px; font-size: 14px; color: var(--gray-900);
+      min-height: 0; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .3s ease, max-height .3s ease, padding .3s ease, margin .3s ease;
+      padding-top: 0; padding-bottom: 0; margin-top: 0;
+    }
+    .chip-detail.show { opacity: 1; max-height: 160px; padding: 14px 16px; margin-top: 14px; }
+    .detail-actions { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+    .detail-actions .cta-btn, .detail-actions .btn-outline { padding: 13px 22px; }
+    .detail-specs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 20px; margin-top: 28px; }
+    .spec { border-top: 1px solid var(--gray-300); padding-top: 10px; }
+    .spec .s-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-600); font-weight: 600; }
+    .spec .s-value { font-family: 'Archivo'; font-weight: 800; font-size: 17px; color: var(--ink); margin-top: 2px; }
+    /* rail */
+    .detail-rail-wrap { margin-top: 28px; }
+    .detail-rail-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-600); font-weight: 600; margin-bottom: 14px; }
+    .detail-rail { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+    .detail-rail::-webkit-scrollbar { height: 6px; }
+    .detail-rail::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 4px; }
+    .rail-item {
+      flex: 0 0 168px; scroll-snap-align: start; cursor: pointer; border: 1px solid var(--gray-300);
+      border-radius: 6px; overflow: hidden; background: var(--white); transition: all var(--t);
+    }
+    .rail-item:hover { border-color: var(--ink); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .rail-item.active { border-color: var(--red); box-shadow: 0 0 0 1px var(--red); }
+    .rail-thumb { aspect-ratio: 16/10; background: var(--stage); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .rail-thumb img.photo { width: 100%; height: 100%; object-fit: cover; }
+    .rail-thumb .fallback { width: 96%; }
+    .rail-meta { padding: 10px 12px; }
+    .rail-meta .rm-name { font-family: 'Archivo'; font-weight: 800; font-size: 14px; }
+    .rail-meta .rm-price { font-size: 11px; color: var(--gray-600); margin-top: 2px; }
+    .detail-fade { transition: opacity .25s ease; }
+    .detail-fade.swapping { opacity: 0; }
+    @media (max-width: 880px) {
+      .detail-main { grid-template-columns: 1fr; }
+      .detail-stage { min-height: 280px; }
+      .detail-body { padding: 28px; }
+      .detail-specs { grid-template-columns: 1fr 1fr; }
+    }
+    /* ============ WHY ATMY ============ */
+    .why { padding: 100px 0; background: var(--ink); color: var(--white); }
+    .why h2 { color: var(--white); }
+    .why .section-subtitle { color: rgba(255,255,255,0.6); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-top: 48px; }
+    .feature { padding: 32px 0; border-top: 1px solid rgba(255,255,255,0.15); }
+    .feature-num { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 14px; color: var(--red); letter-spacing: 0.1em; margin-bottom: 16px; }
+    .feature h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
+    .feature p { color: rgba(255,255,255,0.7); font-size: 14px; }
+    /* ============ FOOTER + TESTIMONI ============ */
+    .footer { background: var(--gray-100); padding: 80px 0 40px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; gap: 48px; } }
+    .contact-block h2 { font-size: 36px; font-weight: 900; margin-bottom: 24px; }
+    .contact-block p.lead { color: var(--gray-600); margin-bottom: 32px; max-width: 400px; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-icon {
+      width: 40px; height: 40px; background: var(--white); border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      color: var(--red); font-weight: 700; font-family: 'Archivo'; font-size: 18px;
+    }
+    .contact-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-600); font-weight: 600; margin-bottom: 4px; }
+    .contact-value { font-weight: 600; font-size: 16px; }
+    .contact-value a:hover { color: var(--red); }
+    .testimoni-block { background: var(--white); border-radius: var(--radius); padding: 40px; position: relative; overflow: hidden; }
+    .testimoni-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .testimoni-header h3 { font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+    .testimoni-nav { display: flex; gap: 8px; }
+    .nav-btn {
+      width: 36px; height: 36px; border: 1px solid var(--gray-300); background: var(--white);
+      cursor: pointer; border-radius: var(--radius); display: flex; align-items: center; justify-content: center;
+      transition: all var(--t); font-size: 16px;
+    }
+    .nav-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .testimoni-track { position: relative; min-height: 230px; }
+    .testimoni-slide { position: absolute; inset: 0; opacity: 0; transform: translateX(40px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); pointer-events: none; }
+    .testimoni-slide.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
+    .testimoni-stars { color: var(--red); font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
+    .testimoni-quote { font-family: 'Archivo', sans-serif; font-size: 20px; font-weight: 600; line-height: 1.4; margin-bottom: 24px; color: var(--ink); }
+    .testimoni-quote::before { content: '\201C'; font-size: 64px; color: var(--red); line-height: 0; vertical-align: -20px; margin-right: 4px; }
+    .testimoni-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: 'Archivo';
+    }
+    .author-name { font-weight: 700; font-size: 14px; }
+    .author-meta { font-size: 12px; color: var(--gray-600); }
+    .testimoni-dots { display: flex; gap: 8px; margin-top: 24px; }
+    .dot { width: 24px; height: 3px; background: var(--gray-300); border: none; cursor: pointer; transition: background var(--t); }
+    .dot.active { background: var(--red); }
+    .footer-bottom {
+      padding-top: 32px; border-top: 1px solid var(--gray-300);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+      font-size: 13px; color: var(--gray-600);
+    }
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a:hover { color: var(--red); }
+    /* floating WhatsApp */
+    .wa-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 300;
+      background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform var(--t);
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 30px; height: 30px; }
+  </style>
+</head>
+<body>
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-brand">
+        <svg class="m-logo" viewBox="0 0 173.2 150" xmlns="http://www.w3.org/2000/svg" aria-label="Mitsubishi">
+          <path d="M86.6 100 L115.47 50 L86.6 0 L57.73 50 Z" />
+          <path d="M86.6 100 L144.34 100 L173.2 150 L115.47 150 Z" />
+          <path d="M86.6 100 L28.86 100 L0 150 L57.73 150 Z" />
+        </svg>
+        <span>MITSUBISHI MOTORS</span>
+      </div>
+      <div class="topbar-info">
+        <span>📞 +62 812-9221-3955</span>
+        <span>📍 Tangerang, Banten</span>
+        <span>🕗 Senin–Minggu, 08.00–20.00</span>
+      </div>
+    </div>
+  </div>
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container">
+      <a href="#beranda" class="brand">
+        <svg class="m-logo" viewBox="0 0 173.2 150" xmlns="http://www.w3.org/2000/svg">
+          <path d="M86.6 100 L115.47 50 L86.6 0 L57.73 50 Z" />
+          <path d="M86.6 100 L144.34 100 L173.2 150 L115.47 150 Z" />
+          <path d="M86.6 100 L28.86 100 L0 150 L57.73 150 Z" />
+        </svg>
+        <div class="brand-text">
+          <span>MITSUBISHI</span>
+          <span class="brand-divider"></span>
+          <span class="brand-atmy">ATMY</span>
+        </div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#beranda">Beranda</a>
+        <a href="#katalog">Katalog</a>
+        <a href="#kenapa">Kenapa Atmy</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <button class="cta-btn header-cta" onclick="waContact()">Konsultasi Sekarang</button>
+    </div>
+  </header>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="beranda">
+    <div class="container">
+      <div>
+        <div class="hero-eyebrow">Dealer Resmi Mitsubishi Tangerang</div>
+        <h1>Mobil <span class="accent">Mitsubishi</span> Impian Anda, Dimulai di Sini.</h1>
+        <p>Dari MPV keluarga sampai kendaraan niaga, temukan unit yang tepat bersama Atmy — sales resmi Mitsubishi. Harga transparan, proses kredit cepat dengan DP ringan, dan pendampingan penuh hingga mobil sampai di rumah Anda.</p>
+        <div class="hero-actions">
+          <button class="cta-btn" onclick="document.getElementById('katalog').scrollIntoView()">Lihat Katalog</button>
+          <button class="btn-outline" onclick="waContact()">Hubungi Sales</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">10+</div><div class="lbl">Model Tersedia</div></div>
+          <div class="hero-stat"><div class="num">0%</div><div class="lbl">Bunga Kredit*</div></div>
+          <div class="hero-stat"><div class="num">24/7</div><div class="lbl">Konsultasi</div></div>
+        </div>
+      </div>
+      <div class="hero-visual" id="heroVisual">
+        <span class="hero-tag">Car of The Year 2025 · Destinator</span>
+      </div>
+    </div>
+  </section>
+  <!-- ============ CATALOG ============ -->
+  <section class="catalog" id="katalog">
+    <div class="container">
+      <div class="section-header">
+        <div><h2 class="section-title">Katalog<br>Produk</h2></div>
+        <p class="section-subtitle">Lineup lengkap Mitsubishi terbaru — mulai dari SUV premium dan MPV keluarga hingga pick-up tangguh, truk, dan armada listrik untuk bisnis Anda. Klik "Lihat Detail" untuk menjelajah tiap model.</p>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" data-tab="passenger">Passenger</button>
+        <button class="tab-btn" data-tab="commercial">Commercial</button>
+      </div>
+
+      <!-- grid (JS-rendered) -->
+      <div class="grid-wrap" id="gridWrap">
+        <div class="catalog-grid" id="catalogGrid"></div>
+      </div>
+
+      <!-- detail view (JS-rendered) -->
+      <div class="detail-view" id="detailView">
+        <div class="detail-top">
+          <div class="detail-breadcrumb">Katalog / <b id="dvCrumb">Produk</b></div>
+          <button class="detail-close" id="detailClose">← Kembali ke Katalog</button>
+        </div>
+        <div class="detail-main">
+          <div class="detail-stage" id="dvStage"></div>
+          <div class="detail-body detail-fade" id="dvBody"></div>
+        </div>
+        <div class="detail-rail-wrap">
+          <div class="detail-rail-label">Model lainnya</div>
+          <div class="detail-rail" id="dvRail"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ WHY ATMY ============ -->
+  <section class="why" id="kenapa">
+    <div class="container">
+      <div class="section-header">
+        <div><h2 class="section-title">Kenapa<br>Pilih Atmy?</h2></div>
+        <p class="section-subtitle">Bukan sekadar jualan mobil. Atmy mendampingi Anda dari pemilihan unit, simulasi kredit, sampai layanan purna jual — semua dalam satu sentuhan yang cepat dan jujur.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-num">01 / KEPERCAYAAN</div>
+          <h3>Dealer Resmi</h3>
+          <p>Setiap unit dijamin asli dari PT MMKSI dengan dokumen lengkap dan garansi pabrik. Anda bertransaksi dengan sales resmi, bukan calo.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-num">02 / PROSES</div>
+          <h3>Kredit Mudah</h3>
+          <p>DP ringan mulai 10%, bunga 0%*, dan persetujuan leasing cepat. Kami bantu hitung simulasi cicilan yang paling pas dengan budget Anda.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-num">03 / LAYANAN</div>
+          <h3>Konsultasi 24 Jam</h3>
+          <p>Tanya stok, warna, atau test drive di rumah kapan saja lewat WhatsApp. Respons cepat, tanpa Anda perlu datang dulu ke showroom.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-num">04 / PURNAJUAL</div>
+          <h3>Garansi & Servis</h3>
+          <p>Garansi resmi, jaringan bengkel luas, dan ketersediaan sparepart terjamin. Mobil Anda terawat untuk jangka panjang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ FOOTER + TESTIMONI ============ -->
+  <footer class="footer" id="kontak">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="contact-block">
+          <h2>Mari bicara.</h2>
+          <p class="lead">Punya model incaran atau masih bingung pilih yang mana? Chat Atmy sekarang — kami bantu cari unit, hitung cicilan, dan jadwalkan test drive tanpa ribet.</p>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <div class="contact-icon">W</div>
+              <div>
+                <div class="contact-label">WhatsApp</div>
+                <div class="contact-value"><a href="https://wa.me/6281292213955" target="_blank" rel="noopener">+62 812-9221-3955</a></div>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">T</div>
+              <div>
+                <div class="contact-label">Telepon</div>
+                <div class="contact-value"><a href="tel:+6281292213955">+62 812-9221-3955</a></div>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">@</div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value"><a href="mailto:Atmy031990@gmail.com">Atmy031990@gmail.com</a></div>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <div class="contact-label">Showroom</div>
+                <div class="contact-value">Jl. [Alamat Showroom], Tangerang, Banten</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="testimoni-block">
+          <div class="testimoni-header">
+            <h3>Apa Kata Mereka</h3>
+            <div class="testimoni-nav">
+              <button class="nav-btn" id="prevBtn" aria-label="Sebelumnya">←</button>
+              <button class="nav-btn" id="nextBtn" aria-label="Selanjutnya">→</button>
+            </div>
+          </div>
+          <div class="testimoni-track" id="testimoniTrack">
+            <div class="testimoni-slide active">
+              <div class="testimoni-stars">★★★★★</div>
+              <div class="testimoni-quote">Prosesnya cepat banget. Dari konsultasi sampai Xpander saya dikirim cuma seminggu, dan dibantu pilih cicilan yang ringan. Recommended!</div>
+              <div class="testimoni-author">
+                <div class="author-avatar">R</div>
+                <div><div class="author-name">Rangga P.</div><div class="author-meta">Xpander Ultimate · 2025</div></div>
+              </div>
+            </div>
+            <div class="testimoni-slide">
+              <div class="testimoni-stars">★★★★★</div>
+              <div class="testimoni-quote">Sempat ragu soal kredit, tapi Atmy sabar jelasin simulasinya sampai paham. DP ringan, approval cepat. Pajero Sport akhirnya jadi punya saya.</div>
+              <div class="testimoni-author">
+                <div class="author-avatar">S</div>
+                <div><div class="author-name">Sari W.</div><div class="author-meta">Pajero Sport Dakar · 2025</div></div>
+              </div>
+            </div>
+            <div class="testimoni-slide">
+              <div class="testimoni-stars">★★★★★</div>
+              <div class="testimoni-quote">Beli L300 buat usaha, after sales-nya yang bikin tenang. Servis gampang, sparepart ready. Pasti balik lagi kalau nambah armada.</div>
+              <div class="testimoni-author">
+                <div class="author-avatar">H</div>
+                <div><div class="author-name">Hendra K.</div><div class="author-meta">L300 Pick-up · 2024</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="testimoni-dots" id="testimoniDots">
+            <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Atmy · Marketing Resmi Mitsubishi Tangerang. Harga & spesifikasi dapat berubah sewaktu-waktu.</div>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/6281292213955" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.3.6 4.4 1.8 6.3L4 29l8-2.1c1.8 1 3.9 1.5 6 1.5 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.7 1.2 1.3-4.6-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6C4.7 9.3 9.8 5 16 5s11.3 4.3 11.3 9.9S22.2 24.7 16 24.7zm6.5-7.4c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.2-.8.1-.4-.2-1.5-.6-2.9-1.8-1.1-.9-1.8-2.1-2-2.5-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.2-.4.4-.6.1-.2 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .8.8.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.6.2-1.7-.1-.2-.3-.3-.7-.5z"/></svg>
+  </a>
+
+  <script>
+    /* =====================================================================
+       PRODUCT DATA
+       Foto resmi diambil dari mitsubishi-motors.co.id (URL bertanda-tangan,
+       masa berlaku terbatas). Jika foto gagal dimuat, ilustrasi SVG tampil
+       otomatis sebagai cadangan. Untuk produksi, unduh foto & host sendiri.
+    ===================================================================== */
+    /* Foto asli: 8 model di-host lokal (diambil dari brosur resmi), 2 truk dari Wikimedia Commons. */
+    const PHOTO = {
+      destinator: "destinator.jpg",
+      xforce: "xforce.jpg",
+      pajero: "pajero.jpg",
+      "xpander-cross": "xpander-cross.jpg",
+      xpander: "xpander.jpg",
+      triton: "triton.jpg",
+      l300: "l300.jpg",
+      l100ev: "l100ev.jpg",
+      canter: "https://commons.wikimedia.org/wiki/Special:FilePath/Kiat_Ananda_Group_Mitsubishi_Fuso_Canter_(GIICOMVEC_2026).jpg?width=1200",
+      fuso: "https://commons.wikimedia.org/wiki/Special:FilePath/Mitsubishi_Fuso_Fighter_MIGNON.jpg?width=1200"
+    };
+    const PHOTO_LEGACY = {
+      destinator: "https://storage.googleapis.com/gcmkscsp001/public/media-assets/ac46349b-604f-46e8-81d7-efb0190a2a5a/conversions/dst-ultimate-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1781455863&Signature=GSB%2Bz1sCESFiftW7ITppLRPydqgW218NItw34Q2qTCd2dzYc84z%2FWsfHDzUXVFu6yfbRhnclVArt05aNaM2%2FO45dC2NcLaDU8Y%2FYB0cDBfX%2Bwm5Wd1YgWhvQJ%2FAmSIR0fQiMU04nzC8xp91XOnEkMoGeNnozL5rjk9CD7bcNFQA6XfdsS%2FYkarzJ%2BRbgPmP9VGmra6Pm5GSab4NAKjqmEGHK6CLHAM47D%2FkY1SbaavfiQdJdUIB6ZLRO95dVjOLh%2BwRDjp%2BHm1PjkeKcYhhVoQbKUAksFOqulA9zYH2enR%2BdcvvXTO09NngZWQDGIomfOipHaqaJH2aX3ZN%2FRsGHrA%3D%3D",
+      xforce: "https://storage.googleapis.com/gcmkscsp001/public/media-assets/049b7e34-dbbc-4fc2-b064-7f5ce3241be4/conversions/xforce-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1782761488&Signature=BdlGuXP1E%2FqonCF5XiCnMIFZBEQt2y7gGTCOTDI%2BHi1doTSb4ikfET1eVNlDfN8U7MdyUa3ysi6R1gX9I6wLrv1RaF8I9%2B3pnZYzPfH%2B1RBW9BqztWbeRkJhd%2BG%2Bx8jTKDzRd%2F7LxAwUbfQqtkzp%2BSnF6yNKdgEeA9VuBgkYylPJCLI9%2BBTYYJwkFeao09ZsgmOXTVNajtda0UEWC%2FiLFNZLKs23JXxxWS52Jp85mAyT9r6DlS5w1LvZTCYgMMRvq5Vd63MWAlMzRNYG7NJgEA9%2FZd3bC1rHaPXerp2Q8gPh29LeTH4H9bsztR4m6CXHz7JJTgWOn4bl7r72dj2QuQ%3D%3D",
+      triton: "https://storage.googleapis.com/gcmkscsp001/public/media-assets/a9103f41-a659-46cb-b85b-8954f3231ce4/conversions/ultimate-white-diamond-front-left-copy-optimized.webp?GoogleAccessId=bsidevops%40gp-prod-mmksi-web-01.iam.gserviceaccount.com&Expires=1782045169&Signature=qiKjFqpTYolEsx%2FDzgmbhuswYxqHYH5fh811YjqsU196eKe%2Fn3vdg%2Fv8ls4xS2dCb2OPQnxnuGw7ljioiHLHpm7ukKT4aRYyNQmHL2oOWwOviSGcQHd%2FiNABFgV47HtL%2BCwoW1oxhdfbW5Yl%2Bdh8%2BXurjudTdVlcNbLZHAlF5HtzN7JikXvK1wEC9DBchWhYplA90LYwIJ4ZhfCBKwxpY87OfYuJBf1nb%2BBfIgulORBJnA9Hrf7SQHg6zE4px56tLYgTWWiYKxoEuvLfaXUNp2Wlj5PsC4xD%2FQy3y97xVpDbISbFyKD8GhHzbd9b%2FxfHS5%2FP9ySO3BAgPenzwJFhtQ%3D%3D"
+    };
+
+    /* ---- SVG vehicle illustrations (transparent bg; stage supplies gradient) ---- */
+    function svgWrap(inner){
+      return '<svg class="fallback" viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">'
+        + '<ellipse cx="240" cy="208" rx="186" ry="11" fill="#000" opacity=".16"/>' + inner + '</svg>';
+    }
+    const BODY = {
+      suv: svgWrap(`
+        <path d="M70 196 L70 150 Q70 120 96 116 L150 116 Q165 86 200 82 L300 82 Q345 86 372 120 L408 130 Q420 134 420 150 L420 196 Z" fill="#222a34"/>
+        <path d="M158 112 Q172 92 200 90 L246 90 L246 112 Z" fill="#7fa8c9"/>
+        <path d="M252 90 L300 90 Q330 94 352 112 L252 112 Z" fill="#7fa8c9"/>
+        <line x1="248" y1="90" x2="248" y2="112" stroke="#222a34" stroke-width="3"/>
+        <rect x="70" y="160" width="350" height="4" fill="#E60012"/>
+        <rect x="60" y="150" width="14" height="16" rx="2" fill="#fff3c4"/>
+        <rect x="412" y="150" width="10" height="14" rx="2" fill="#E60012"/>
+        <g><circle cx="146" cy="196" r="30" fill="#10151b"/><circle cx="146" cy="196" r="17" fill="#3a4654"/><circle cx="146" cy="196" r="8" fill="#10151b"/></g>
+        <g><circle cx="338" cy="196" r="30" fill="#10151b"/><circle cx="338" cy="196" r="17" fill="#3a4654"/><circle cx="338" cy="196" r="8" fill="#10151b"/></g>`),
+      compact: svgWrap(`
+        <path d="M74 196 L74 152 Q74 124 104 120 L156 120 Q172 92 206 90 L286 90 Q330 94 356 122 L404 134 Q416 138 416 154 L416 196 Z" fill="#262e38"/>
+        <path d="M164 116 Q178 98 206 96 L244 96 L244 116 Z" fill="#86b0d0"/>
+        <path d="M250 96 L286 96 Q318 100 340 116 L250 116 Z" fill="#86b0d0"/>
+        <line x1="247" y1="96" x2="247" y2="116" stroke="#262e38" stroke-width="3"/>
+        <rect x="74" y="162" width="342" height="4" fill="#E60012"/>
+        <rect x="64" y="150" width="14" height="16" rx="2" fill="#fff3c4"/>
+        <rect x="408" y="150" width="10" height="14" rx="2" fill="#E60012"/>
+        <g><circle cx="150" cy="196" r="28" fill="#10151b"/><circle cx="150" cy="196" r="16" fill="#3a4654"/><circle cx="150" cy="196" r="7" fill="#10151b"/></g>
+        <g><circle cx="336" cy="196" r="28" fill="#10151b"/><circle cx="336" cy="196" r="16" fill="#3a4654"/><circle cx="336" cy="196" r="7" fill="#10151b"/></g>`),
+      mpv: svgWrap(`
+        <path d="M60 196 L60 156 Q60 130 86 128 L120 92 Q132 80 156 80 L320 80 Q352 84 384 128 L414 138 Q424 142 424 158 L424 196 Z" fill="#222a34"/>
+        <path d="M128 96 Q138 88 158 88 L210 88 L210 122 L120 122 Z" fill="#7fa8c9"/>
+        <path d="M216 88 L300 88 Q330 92 356 122 L216 122 Z" fill="#7fa8c9"/>
+        <line x1="213" y1="88" x2="213" y2="122" stroke="#222a34" stroke-width="3"/>
+        <rect x="60" y="162" width="364" height="4" fill="#E60012"/>
+        <rect x="50" y="150" width="13" height="16" rx="2" fill="#fff3c4"/>
+        <rect x="416" y="150" width="10" height="14" rx="2" fill="#E60012"/>
+        <g><circle cx="136" cy="196" r="29" fill="#10151b"/><circle cx="136" cy="196" r="16" fill="#3a4654"/><circle cx="136" cy="196" r="7" fill="#10151b"/></g>
+        <g><circle cx="344" cy="196" r="29" fill="#10151b"/><circle cx="344" cy="196" r="16" fill="#3a4654"/><circle cx="344" cy="196" r="7" fill="#10151b"/></g>`),
+      cross: svgWrap(`
+        <path d="M58 194 L62 156 Q64 132 90 130 L122 92 Q134 80 158 80 L318 80 Q350 84 380 128 L412 138 Q422 142 422 158 L422 194 Z" fill="#222a34"/>
+        <path d="M130 96 Q140 88 160 88 L210 88 L210 122 L122 122 Z" fill="#7fa8c9"/>
+        <path d="M216 88 L298 88 Q328 92 352 122 L216 122 Z" fill="#7fa8c9"/>
+        <line x1="213" y1="88" x2="213" y2="122" stroke="#222a34" stroke-width="3"/>
+        <path d="M58 178 L422 178 L420 192 L60 192 Z" fill="#171c23"/>
+        <rect x="62" y="160" width="358" height="4" fill="#E60012"/>
+        <rect x="50" y="150" width="13" height="16" rx="2" fill="#fff3c4"/>
+        <g><circle cx="138" cy="194" r="31" fill="#10151b"/><circle cx="138" cy="194" r="17" fill="#46535f"/><circle cx="138" cy="194" r="8" fill="#10151b"/></g>
+        <g><circle cx="344" cy="194" r="31" fill="#10151b"/><circle cx="344" cy="194" r="17" fill="#46535f"/><circle cx="344" cy="194" r="8" fill="#10151b"/></g>`),
+      pickup: svgWrap(`
+        <path d="M54 196 L54 158 Q54 132 80 130 L150 130 L172 96 Q182 86 204 86 L262 86 Q278 86 282 104 L286 130 L300 130 L300 196 Z" fill="#222a34"/>
+        <path d="M180 104 Q188 96 206 96 L244 96 Q258 96 262 110 L266 126 L180 126 Z" fill="#7fa8c9"/>
+        <line x1="222" y1="96" x2="226" y2="126" stroke="#222a34" stroke-width="3"/>
+        <path d="M300 196 L300 138 L430 138 Q438 138 438 148 L438 196 Z" fill="#1b222b"/>
+        <rect x="300" y="138" width="138" height="6" fill="#10151b"/>
+        <rect x="54" y="166" width="384" height="4" fill="#E60012"/>
+        <rect x="44" y="152" width="12" height="16" rx="2" fill="#fff3c4"/>
+        <g><circle cx="132" cy="196" r="31" fill="#10151b"/><circle cx="132" cy="196" r="17" fill="#46535f"/><circle cx="132" cy="196" r="8" fill="#10151b"/></g>
+        <g><circle cx="372" cy="196" r="31" fill="#10151b"/><circle cx="372" cy="196" r="17" fill="#46535f"/><circle cx="372" cy="196" r="8" fill="#10151b"/></g>`),
+      smallpickup: svgWrap(`
+        <path d="M60 196 L60 150 Q60 120 88 118 L170 118 L170 196 Z" fill="#2b333d"/>
+        <path d="M84 114 L96 84 L168 84 L170 114 Z" fill="#86b0d0"/>
+        <line x1="130" y1="84" x2="131" y2="114" stroke="#2b333d" stroke-width="3"/>
+        <path d="M170 196 L170 140 L428 140 Q436 140 436 150 L436 196 Z" fill="#20272f"/>
+        <rect x="170" y="140" width="266" height="6" fill="#10151b"/>
+        <rect x="60" y="166" width="376" height="4" fill="#E60012"/>
+        <rect x="50" y="150" width="12" height="16" rx="2" fill="#fff3c4"/>
+        <g><circle cx="124" cy="196" r="29" fill="#10151b"/><circle cx="124" cy="196" r="16" fill="#46535f"/><circle cx="124" cy="196" r="7" fill="#10151b"/></g>
+        <g><circle cx="372" cy="196" r="29" fill="#10151b"/><circle cx="372" cy="196" r="16" fill="#46535f"/><circle cx="372" cy="196" r="7" fill="#10151b"/></g>`),
+      van: svgWrap(`
+        <path d="M58 196 L58 110 Q58 92 80 92 L120 92 L150 80 L300 80 Q412 84 420 120 L420 196 Z" fill="#283440"/>
+        <path d="M150 96 L150 124 L96 124 L96 100 Q96 96 102 96 Z" fill="#7fa8c9"/>
+        <path d="M160 96 L210 96 L210 124 L160 124 Z" fill="#7fa8c9"/>
+        <rect x="58" y="166" width="362" height="4" fill="#00843D"/>
+        <rect x="48" y="150" width="12" height="16" rx="2" fill="#fff3c4"/>
+        <text x="330" y="160" font-family="Archivo, sans-serif" font-weight="900" font-size="26" fill="#00843D" opacity=".85">EV</text>
+        <g><circle cx="130" cy="196" r="29" fill="#10151b"/><circle cx="130" cy="196" r="16" fill="#46535f"/><circle cx="130" cy="196" r="7" fill="#10151b"/></g>
+        <g><circle cx="356" cy="196" r="29" fill="#10151b"/><circle cx="356" cy="196" r="16" fill="#46535f"/><circle cx="356" cy="196" r="7" fill="#10151b"/></g>`),
+      lighttruck: svgWrap(`
+        <path d="M46 196 L46 104 Q46 92 60 92 L116 92 Q128 92 130 104 L134 150 L150 150 L150 196 Z" fill="#222a34"/>
+        <path d="M60 108 L118 108 L121 138 L60 138 Z" fill="#8fb6d6"/>
+        <rect x="150" y="100" width="298" height="96" rx="3" fill="#d7dde3" stroke="#5b6672" stroke-width="3"/>
+        <line x1="214" y1="103" x2="214" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <line x1="282" y1="103" x2="282" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <line x1="350" y1="103" x2="350" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <line x1="416" y1="103" x2="416" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <rect x="144" y="96" width="10" height="100" fill="#171c23"/>
+        <rect x="46" y="172" width="104" height="5" fill="#E60012"/>
+        <rect x="36" y="150" width="12" height="16" rx="2" fill="#fff3c4"/>
+        <g><circle cx="100" cy="196" r="30" fill="#10151b"/><circle cx="100" cy="196" r="16" fill="#46535f"/><circle cx="100" cy="196" r="7" fill="#10151b"/></g>
+        <g><circle cx="372" cy="196" r="30" fill="#10151b"/><circle cx="372" cy="196" r="16" fill="#46535f"/><circle cx="372" cy="196" r="7" fill="#10151b"/></g>`),
+      heavytruck: svgWrap(`
+        <path d="M34 196 L34 88 Q34 74 50 74 L116 74 Q130 74 132 90 L138 150 L152 150 L152 196 Z" fill="#222a34"/>
+        <path d="M52 92 L120 92 L124 132 L52 132 Z" fill="#8fb6d6"/>
+        <rect x="152" y="84" width="304" height="112" rx="3" fill="#d7dde3" stroke="#5b6672" stroke-width="3"/>
+        <line x1="216" y1="87" x2="216" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <line x1="280" y1="87" x2="280" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <line x1="344" y1="87" x2="344" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <line x1="408" y1="87" x2="408" y2="193" stroke="#b3bcc6" stroke-width="3"/>
+        <rect x="146" y="80" width="10" height="116" fill="#171c23"/>
+        <rect x="34" y="172" width="112" height="5" fill="#E60012"/>
+        <rect x="24" y="148" width="12" height="16" rx="2" fill="#fff3c4"/>
+        <g><circle cx="98" cy="196" r="30" fill="#10151b"/><circle cx="98" cy="196" r="16" fill="#46535f"/><circle cx="98" cy="196" r="7" fill="#10151b"/></g>
+        <g><circle cx="330" cy="196" r="30" fill="#10151b"/><circle cx="330" cy="196" r="16" fill="#46535f"/><circle cx="330" cy="196" r="7" fill="#10151b"/></g>
+        <g><circle cx="392" cy="196" r="30" fill="#10151b"/><circle cx="392" cy="196" r="16" fill="#46535f"/><circle cx="392" cy="196" r="7" fill="#10151b"/></g>`)
+    };
+
+    /* ---- feature chip icons ---- */
+    const ICON = {
+      engine: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h2l2-3h4l2 3h2"/><rect x="3" y="12" width="14" height="6" rx="1"/><path d="M17 14h3v-3M8 9V6h5v3"/></svg>',
+      seat: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M5 11h10a3 3 0 0 1 3 3v4"/><path d="M5 18v-3"/></svg>',
+      shield: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+      sound: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8a4 4 0 0 1 0 8"/></svg>',
+      wheel: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M3 12h6M21 12h-6M12 21v-6"/></svg>',
+      mountain: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-11 4 6 2-3 6 8z"/></svg>',
+      bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h6l-1 7 9-11h-6z"/></svg>',
+      box: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>',
+      leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M9 17c2-3 4-5 8-6"/></svg>',
+      gauge: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 14l4-3"/></svg>',
+      truck: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>',
+      connect: '<svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>'
+    };
+
+    /* ---- the catalog ---- */
+    const PRODUCTS = [
+      {
+        id:'destinator', seg:'passenger', body:'suv', name:'Destinator', cat:'Premium Family SUV',
+        badge:'BARU', photo:PHOTO.destinator,
+        tagline:'Confidence Booster for Energetic Family',
+        priceFrom:'Rp397 Juta', priceNote:'OTR Jabodetabek · GLS. Tipe 55th Anniversary hingga Rp527,5 Jt.',
+        desc:'SUV 7-penumpang terbaru Mitsubishi, peraih Car of The Year 2025. Memadukan mesin turbo bertenaga, kabin lapang berkelas, dan teknologi keselamatan Diamond Sense untuk perjalanan keluarga yang percaya diri.',
+        chips:[
+          {icon:'engine', label:'Mesin Turbo 1.5L', detail:'Mesin bensin turbo 1.5L bertenaga namun tetap efisien, dipadukan transmisi CVT yang halus untuk akselerasi responsif di kota maupun tanjakan.'},
+          {icon:'shield', label:'Diamond Sense ADAS', detail:'Paket bantuan berkendara lengkap: Adaptive Cruise Control, Forward Collision Mitigation, Blind Spot Warning, dan kamera 360°.'},
+          {icon:'wheel', label:'5 Mode + AYC', detail:'5 Mode Berkendara (Normal, Wet, Gravel, Tarmac, Mud) plus Active Yaw Control untuk handling presisi di tiap tikungan.'}
+        ],
+        specs:[{l:'Mesin',v:'1.5L Turbo'},{l:'Transmisi',v:'CVT'},{l:'Kapasitas',v:'7 Penumpang'},{l:'Audio',v:'Yamaha Premium'}]
+      },
+      {
+        id:'xforce', seg:'passenger', body:'compact', name:'Xforce', cat:'SUV Compact',
+        badge:'POPULER', photo:PHOTO.xforce,
+        tagline:'Keamanan & Gaya dalam Setiap Aksi',
+        priceFrom:'Rp388 Juta', priceNote:'OTR Jabodetabek · Exceed CVT. Hingga Rp434 Jt untuk 55th Anniversary.',
+        desc:'SUV compact futuristik dengan desain berani dan ground clearance tinggi. Ringkas untuk kota, tetap percaya diri di jalan tak rata — lengkap dengan audio Dynamic Sound Yamaha yang ikonik.',
+        chips:[
+          {icon:'sound', label:'Dynamic Sound Yamaha', detail:'8 speaker hasil kolaborasi dengan Yamaha, dengan 4 mode suara (Lively, Signature, Powerful, Relaxing) — serasa konser di dalam kabin.'},
+          {icon:'wheel', label:'Active Yaw Control', detail:'Teknologi AYC mendistribusikan tenaga ke roda untuk manuver yang lebih stabil, presisi, dan menyenangkan.'},
+          {icon:'mountain', label:'Ground Clearance 222mm', detail:'Jarak ke tanah tinggi membuat Xforce siap melibas polisi tidur, jalan rusak, hingga banjir ringan dengan tenang.'}
+        ],
+        specs:[{l:'Mesin',v:'1.5L MIVEC'},{l:'Transmisi',v:'CVT'},{l:'Ground Clear.',v:'222 mm'},{l:'Audio',v:'Yamaha 8-Spk'}]
+      },
+      {
+        id:'pajero', seg:'passenger', body:'suv', name:'Pajero Sport', cat:'SUV Ladder Frame',
+        badge:null, photo:null,
+        tagline:'Live the Adventure',
+        priceFrom:'Rp591 Juta', priceNote:'OTR Jakarta · Exceed 4x2. Flagship Dakar Ultimate 4x4 Rp794 Jt.',
+        desc:'Ikon SUV tangguh Mitsubishi. Sasis ladder frame, mesin diesel turbo bertenaga, dan sistem 4WD Super Select menjadikannya andalan untuk petualangan jauh sekaligus kemewahan harian.',
+        chips:[
+          {icon:'engine', label:'Diesel Turbo 2.4L', detail:'Mesin diesel MIVEC 2.4L bertenaga besar dengan torsi melimpah — kuat menanjak dan menarik beban berat.'},
+          {icon:'wheel', label:'4WD Super Select', detail:'Sistem penggerak 4 roda canggih yang bisa diaktifkan di berbagai medan, dari aspal basah hingga lumpur dan bebatuan.'},
+          {icon:'seat', label:'7-Seater Mewah', detail:'Kabin tiga baris yang lega dan berkelas, dengan fitur kenyamanan premium untuk perjalanan keluarga jarak jauh.'}
+        ],
+        specs:[{l:'Mesin',v:'2.4L Diesel'},{l:'Penggerak',v:'4WD Super Select'},{l:'Kapasitas',v:'7 Penumpang'},{l:'Sasis',v:'Ladder Frame'}]
+      },
+      {
+        id:'xpander-cross', seg:'passenger', body:'cross', name:'Xpander Cross', cat:'MPV Crossover',
+        badge:null, photo:null,
+        tagline:"Don't Stop, Xpand Your Adventure",
+        priceFrom:'Rp343 Juta', priceNote:'OTR Jakarta. Tipe Premium CVT hingga Rp369,2 Jt.',
+        desc:'Xpander dengan jiwa petualang. Ground clearance lebih tinggi, body cladding kokoh, dan tampilan rugged — MPV keluarga yang siap diajak keluar dari rutinitas.',
+        chips:[
+          {icon:'mountain', label:'Stance Lebih Tinggi', detail:'Ground clearance ditinggikan plus pelindung body rugged, lebih percaya diri di jalan rusak dan medan ringan.'},
+          {icon:'seat', label:'Kabin 7 Penumpang', detail:'Tiga baris kursi yang fleksibel dan lapang, mudah dilipat untuk memuat barang besar saat berpetualang.'},
+          {icon:'gauge', label:'Nyaman & Irit', detail:'Suspensi yang diredam baik dan mesin efisien membuat perjalanan jauh tetap halus dan hemat bahan bakar.'}
+        ],
+        specs:[{l:'Mesin',v:'1.5L MIVEC'},{l:'Transmisi',v:'CVT / MT'},{l:'Kapasitas',v:'7 Penumpang'},{l:'Tipe',v:'Crossover'}]
+      },
+      {
+        id:'xpander', seg:'passenger', body:'mpv', name:'Xpander', cat:'MPV Keluarga',
+        badge:null, photo:null,
+        tagline:'Be The Life Xpander',
+        priceFrom:'Rp270 Juta', priceNote:'OTR Jakarta · GLS M/T. Tipe Ultimate hingga ~Rp320 Jt.',
+        desc:'MPV keluarga terlaris yang menyeimbangkan kabin luas, desain modern, dan biaya pemakaian yang ramah. Pilihan cerdas untuk mobilitas keluarga Indonesia sehari-hari.',
+        chips:[
+          {icon:'seat', label:'Kabin Luas 7-Seater', detail:'Ruang kaki lega di tiga baris dan akses masuk yang mudah — nyaman untuk keluarga besar maupun perjalanan panjang.'},
+          {icon:'gauge', label:'Irit Bahan Bakar', detail:'Mesin MIVEC 1.5L yang efisien menjaga konsumsi BBM tetap hemat untuk pemakaian harian.'},
+          {icon:'box', label:'Bagasi Fleksibel', detail:'Konfigurasi kursi yang mudah dilipat memberi ruang bagasi luas saat dibutuhkan.'}
+        ],
+        specs:[{l:'Mesin',v:'1.5L MIVEC'},{l:'Transmisi',v:'CVT / MT'},{l:'Kapasitas',v:'7 Penumpang'},{l:'Tipe',v:'MPV'}]
+      },
+      {
+        id:'triton', seg:'commercial', body:'pickup', name:'Triton', cat:'Double Cabin Pick-up',
+        badge:'BARU', photo:PHOTO.triton,
+        tagline:'Nyalakan Jiwa Petualangmu',
+        priceFrom:'Rp323 Juta', priceNote:'OTR Jabodetabek · Single Cab GLX. Ultimate 4x4 AT hingga Rp571,5 Jt.',
+        desc:'All New Triton, double cabin generasi terbaru yang kuat sekaligus canggih. Mesin diesel bertenaga, sistem 4WD modern, dan kabin nyaman untuk kerja keras maupun gaya hidup.',
+        chips:[
+          {icon:'engine', label:'Diesel 2.4L · 181 HP', detail:'Mesin turbo diesel 2.4L menghasilkan 181 HP dan torsi 430 Nm — bertenaga untuk muatan berat dan medan menantang.'},
+          {icon:'wheel', label:'4WD Super Select II', detail:'Sistem penggerak 4 roda dengan berbagai mode medan untuk traksi maksimal di lumpur, pasir, dan tanjakan.'},
+          {icon:'box', label:'Bak Kargo Luas', detail:'Bak belakang lebar dan kuat, dirancang untuk daya angkut besar tanpa mengorbankan kenyamanan kabin.'}
+        ],
+        specs:[{l:'Mesin',v:'2.4L Diesel'},{l:'Tenaga',v:'181 HP'},{l:'Torsi',v:'430 Nm'},{l:'Penggerak',v:'4WD'}]
+      },
+      {
+        id:'l300', seg:'commercial', body:'smallpickup', name:'L300', cat:'Pick-up Niaga',
+        badge:null, photo:null,
+        tagline:'Andalan Sejati untuk Usaha',
+        priceFrom:'Rp246 Juta', priceNote:'Estimasi OTR. Bervariasi menurut wilayah & karoseri.',
+        desc:'Pick-up legendaris yang jadi tulang punggung jutaan usaha di Indonesia. Mesin diesel common-rail yang irit dan bandel, bak lebar, serta biaya perawatan ringan.',
+        chips:[
+          {icon:'engine', label:'Diesel Common-Rail', detail:'Mesin diesel modern yang lebih irit dan bertenaga, tetap mewarisi ketangguhan dan keawetan khas L300.'},
+          {icon:'box', label:'Bak Lebar & Kuat', detail:'Dek kargo luas yang siap menampung muatan besar setiap hari untuk berbagai jenis usaha.'},
+          {icon:'gauge', label:'Irit & Hemat Rawat', detail:'Konsumsi BBM ekonomis dan sparepart terjangkau — biaya operasional rendah untuk bisnis.'}
+        ],
+        specs:[{l:'Mesin',v:'2.2L Diesel CR'},{l:'Transmisi',v:'Manual'},{l:'Konfigurasi',v:'Pick-up'},{l:'Segmen',v:'Niaga Ringan'}]
+      },
+      {
+        id:'l100ev', seg:'commercial', body:'van', name:'L100 EV', cat:'Van Niaga Listrik',
+        badge:'EV', photo:null,
+        tagline:'Niaga Tanpa Emisi, Tanpa Kompromi',
+        priceFrom:'Rp323 Juta', priceNote:'Estimasi OTR. Tanya insentif kendaraan listrik ke sales.',
+        desc:'Solusi logistik perkotaan bebas emisi. Tenaga listrik yang senyap, biaya operasional jauh lebih rendah dari diesel, dan cocok untuk pengiriman last-mile yang ramah lingkungan.',
+        chips:[
+          {icon:'leaf', label:'Zero Emisi', detail:'Sepenuhnya bertenaga listrik — tanpa emisi gas buang, ideal untuk operasi di zona rendah emisi perkotaan.'},
+          {icon:'bolt', label:'Biaya Operasional Rendah', detail:'Biaya pengisian daya jauh lebih murah dibanding BBM, plus komponen lebih sedikit sehingga perawatan minim.'},
+          {icon:'box', label:'Praktis untuk Last-Mile', detail:'Dimensi ringkas dan tenaga responsif yang pas untuk distribusi barang di dalam kota.'}
+        ],
+        specs:[{l:'Penggerak',v:'Motor Listrik'},{l:'Emisi',v:'0 (Nol)'},{l:'Tipe',v:'Van Niaga'},{l:'Pengisian',v:'AC / DC'}]
+      },
+      {
+        id:'canter', seg:'commercial', body:'lighttruck', name:'Colt Diesel', cat:'Truk Ringan (Canter)',
+        badge:null, photo:null,
+        tagline:'Raja Truk Ringan Indonesia',
+        priceFrom:'Rp432,9 Juta', priceNote:'OTR · tipe FE 71. Beragam wheelbase hingga FE SHDX Rp579 Jt.',
+        desc:'Colt Diesel "Canter" — truk ringan paling tepercaya di kelasnya. Pilihan wheelbase lengkap, mesin 4D series yang bandel, dan jaringan servis terluas membuat bisnis tak pernah berhenti.',
+        chips:[
+          {icon:'engine', label:'Mesin 4D Series', detail:'Mesin diesel legendaris yang terkenal awet, bertenaga, dan mudah dirawat di mana saja.'},
+          {icon:'truck', label:'Banyak Pilihan Wheelbase', detail:'Tersedia beragam panjang sasis dan tipe untuk menyesuaikan kebutuhan karoseri dan muatan Anda.'},
+          {icon:'box', label:'Daya Angkut Besar', detail:'Dirancang untuk membawa muatan berat sehari-hari dengan andal — tulang punggung distribusi nasional.'}
+        ],
+        specs:[{l:'Mesin',v:'4D Diesel'},{l:'Kelas',v:'Truk Ringan'},{l:'Wheelbase',v:'Beragam'},{l:'Aplikasi',v:'Niaga / Karoseri'}]
+      },
+      {
+        id:'fuso', seg:'commercial', body:'heavytruck', name:'Fuso Fighter', cat:'Truk Medium / Berat',
+        badge:null, photo:null,
+        tagline:'Kekuatan untuk Muatan Berat',
+        priceFrom:'Rp955,5 Juta', priceNote:'Estimasi OTR · bervariasi menurut tipe FM/FN & konfigurasi.',
+        desc:'Truk medium-to-heavy duty untuk tugas paling berat. Mesin bertenaga besar, sasis kokoh, dan keandalan tinggi untuk angkutan jarak jauh, konstruksi, dan industri.',
+        chips:[
+          {icon:'engine', label:'Mesin Bertenaga', detail:'Mesin diesel besar dengan torsi tinggi, dirancang untuk membawa muatan berat di rute panjang tanpa lelah.'},
+          {icon:'truck', label:'Muatan Maksimal', detail:'Konfigurasi sumbu dan sasis kuat (FM/FN) untuk kapasitas angkut besar di sektor logistik dan konstruksi.'},
+          {icon:'shield', label:'Tahan Banting', detail:'Dibangun untuk keandalan jangka panjang dengan biaya operasional yang efisien per kilometer.'}
+        ],
+        specs:[{l:'Kelas',v:'Medium / Heavy'},{l:'Konfigurasi',v:'FM / FN'},{l:'Aplikasi',v:'Logistik / Industri'},{l:'Sasis',v:'Heavy Duty'}]
+      }
+    ];
+
+    const byId = id => PRODUCTS.find(p => p.id === id);
+
+    /* ---- image markup (foto asli) ---- */
+    function imgMarkup(p, cls){
+      return '<img class="photo" loading="lazy" src="'+PHOTO[p.id]+'" alt="Mitsubishi '+p.name+'">';
+    }
+
+    /* ---- render catalog grid ---- */
+    let currentTab = 'passenger';
+    const grid = document.getElementById('catalogGrid');
+    function renderGrid(){
+      const list = PRODUCTS.filter(p => p.seg === currentTab);
+      grid.innerHTML = list.map(p => {
+        const badge = p.badge ? '<span class="product-badge '+(p.badge==='EV'?'ev':p.badge==='POPULER'?'pop':'')+'">'+p.badge+'</span>' : '';
+        return '<article class="product-card" data-id="'+p.id+'">'
+          + '<div class="product-image">'+badge+imgMarkup(p)+'</div>'
+          + '<div class="product-info">'
+          +   '<div class="product-category">'+p.cat+'</div>'
+          +   '<div class="product-name">'+p.name+'</div>'
+          +   '<div class="product-tagline">'+p.tagline+'</div>'
+          +   '<div class="product-price">Mulai dari <strong>'+p.priceFrom+'</strong></div>'
+          +   '<div class="product-cta">Lihat Detail →</div>'
+          + '</div></article>';
+      }).join('');
+      grid.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', () => openDetail(card.dataset.id, card));
+      });
+    }
+
+    /* ---- DETAIL VIEW ---- */
+    const gridWrap = document.getElementById('gridWrap');
+    const detailView = document.getElementById('detailView');
+    const dvStage = document.getElementById('dvStage');
+    const dvBody = document.getElementById('dvBody');
+    const dvRail = document.getElementById('dvRail');
+    const dvCrumb = document.getElementById('dvCrumb');
+
+    function buildBody(p){
+      const chips = p.chips.map((c,i) =>
+        '<button class="chip'+(i===0?' active':'')+'" data-i="'+i+'">'+(ICON[c.icon]||'')+'<span>'+c.label+'</span></button>'
+      ).join('');
+      const specs = p.specs.map(s => '<div class="spec"><div class="s-label">'+s.l+'</div><div class="s-value">'+s.v+'</div></div>').join('');
+      return ''
+        + '<div class="detail-cat">'+p.cat+'</div>'
+        + '<h2 class="detail-name">'+p.name+'</h2>'
+        + '<div class="detail-tagline">'+p.tagline+'</div>'
+        + '<div class="detail-price-row"><span class="from">Mulai dari</span><span class="price">'+p.priceFrom+'</span><span class="note">'+p.priceNote+'</span></div>'
+        + '<div class="detail-chips-label">3 Highlight Unggulan</div>'
+        + '<div class="detail-chips">'+chips+'</div>'
+        + '<div class="chip-detail show" id="chipDetail">'+p.chips[0].detail+'</div>'
+        + '<p style="margin-top:22px;color:var(--gray-600);font-size:14px;line-height:1.7;">'+p.desc+'</p>'
+        + '<div class="detail-specs">'+specs+'</div>'
+        + '<div class="detail-actions">'
+        +   '<button class="cta-btn" onclick="waContact(\''+p.name+'\')">Konsultasi '+p.name+'</button>'
+        +   '<button class="btn-outline" onclick="waContact(\''+p.name+'\',\'test drive\')">Jadwalkan Test Drive</button>'
+        + '</div>';
+    }
+
+    function buildStageFixed(p){
+      const badge = p.badge ? '<span class="stage-badge '+(p.badge==='EV'?'ev':'')+'">'+p.badge+'</span>' : '';
+      const media = '<img class="stage-img" src="'+PHOTO[p.id]+'" alt="Mitsubishi '+p.name+'">';
+      return badge + media;
+    }
+
+    function wireChips(p){
+      const chipDetail = document.getElementById('chipDetail');
+      dvBody.querySelectorAll('.chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          dvBody.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const i = +chip.dataset.i;
+          chipDetail.classList.remove('show');
+          setTimeout(() => { chipDetail.textContent = p.chips[i].detail; chipDetail.classList.add('show'); }, 160);
+        });
+      });
+    }
+
+    function renderRail(activeId){
+      const list = PRODUCTS.filter(p => p.seg === currentTab);
+      dvRail.innerHTML = list.map(p =>
+        '<div class="rail-item'+(p.id===activeId?' active':'')+'" data-id="'+p.id+'">'
+        + '<div class="rail-thumb">'+imgMarkup(p)+'</div>'
+        + '<div class="rail-meta"><div class="rm-name">'+p.name+'</div><div class="rm-price">Mulai '+p.priceFrom+'</div></div>'
+        + '</div>'
+      ).join('');
+      dvRail.querySelectorAll('.rail-item').forEach(it => {
+        it.addEventListener('click', () => switchDetail(it.dataset.id));
+      });
+    }
+
+    function fillDetail(p){
+      dvCrumb.textContent = p.name;
+      dvStage.innerHTML = buildStageFixed(p);
+      dvBody.innerHTML = buildBody(p);
+      wireChips(p);
+    }
+
+    function switchDetail(id){
+      const p = byId(id);
+      dvBody.classList.add('swapping');
+      dvStage.style.opacity = '0';
+      setTimeout(() => {
+        fillDetail(p);
+        renderRail(id);
+        dvBody.classList.remove('swapping');
+        dvStage.style.transition = 'opacity .3s ease';
+        dvStage.style.opacity = '1';
+      }, 220);
+    }
+
+    function openDetail(id, cardEl){
+      const p = byId(id);
+      // exit animation on the grid ("menggeser produk lain")
+      grid.classList.add('exiting');
+      if(cardEl) cardEl.classList.add('is-selected');
+      setTimeout(() => {
+        gridWrap.style.display = 'none';
+        grid.classList.remove('exiting');
+        if(cardEl) cardEl.classList.remove('is-selected');
+        fillDetail(p);
+        renderRail(id);
+        detailView.classList.add('open');
+        detailView.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 420);
+    }
+
+    function closeDetail(){
+      detailView.classList.remove('open');
+      gridWrap.style.display = '';
+      grid.style.opacity = '0';
+      requestAnimationFrame(() => { grid.style.transition='opacity .4s ease'; grid.style.opacity='1'; });
+      document.getElementById('katalog').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    document.getElementById('detailClose').addEventListener('click', closeDetail);
+
+    /* ---- TAB SWITCHER ---- */
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentTab = btn.dataset.tab;
+        tabBtns.forEach(b => b.classList.toggle('active', b === btn));
+        if(detailView.classList.contains('open')) closeDetail();
+        renderGrid();
+      });
+    });
+
+    /* ---- WhatsApp helper ---- */
+    function waContact(model, intent){
+      const base = 'https://wa.me/6281292213955?text=';
+      let msg = 'Halo Atmy, saya tertarik dengan Mitsubishi';
+      if(model) msg += ' ' + model;
+      if(intent === 'test drive') msg += ' dan ingin menjadwalkan test drive';
+      else msg += ' dan ingin konsultasi serta info harga/kredit';
+      msg += '. Mohon dibantu ya.';
+      window.open(base + encodeURIComponent(msg), '_blank');
+    }
+
+    /* ---- HERO image (Destinator) ---- */
+    (function(){
+      const hv = document.getElementById('heroVisual');
+      const img = document.createElement('img');
+      img.src = PHOTO.destinator;
+      img.alt = 'Mitsubishi Destinator';
+      hv.insertBefore(img, hv.firstChild);
+    })();
+
+    /* ---- TESTIMONI SLIDER ---- */
+    const slides = document.querySelectorAll('.testimoni-slide');
+    const dots = document.querySelectorAll('.dot');
+    let current = 0, autoplayTimer;
+    function goTo(idx){
+      current = (idx + slides.length) % slides.length;
+      slides.forEach((s,i) => s.classList.toggle('active', i===current));
+      dots.forEach((d,i) => d.classList.toggle('active', i===current));
+    }
+    const next = () => goTo(current+1);
+    const prev = () => goTo(current-1);
+    function startAutoplay(){ stopAutoplay(); autoplayTimer = setInterval(next, 5000); }
+    function stopAutoplay(){ if(autoplayTimer) clearInterval(autoplayTimer); }
+    document.getElementById('nextBtn').addEventListener('click', () => { next(); startAutoplay(); });
+    document.getElementById('prevBtn').addEventListener('click', () => { prev(); startAutoplay(); });
+    dots.forEach((d,i) => d.addEventListener('click', () => { goTo(i); startAutoplay(); }));
+    const track = document.getElementById('testimoniTrack');
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+    track.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if(Math.abs(dx) > 50){ dx < 0 ? next() : prev(); startAutoplay(); }
+    });
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+    startAutoplay();
+
+    /* ---- MOBILE NAV ---- */
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
+    mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+
+    /* ---- INIT ---- */
+    renderGrid();
+  </script>
+</body>
+</html>
