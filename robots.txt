@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atmy-mitsubishi.vercel.app/sitemap.xml
