@@ -390,12 +390,15 @@
       transition: all var(--t); font-size: 16px;
     }
     .nav-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
-    .testimoni-track { position: relative; min-height: 230px; }
-    .testimoni-slide { position: absolute; inset: 0; opacity: 0; transform: translateX(40px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); pointer-events: none; }
+    .testimoni-track { position: relative; min-height: 300px; }
+    .testimoni-slide { position: absolute; inset: 0; opacity: 0; transform: translateX(40px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); pointer-events: none; display: flex; gap: 20px; align-items: stretch; }
     .testimoni-slide.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
+    .testi-photo { flex: 0 0 clamp(110px, 34%, 165px); border-radius: 8px; overflow: hidden; background: var(--gray-100); box-shadow: var(--shadow); }
+    .testi-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .testi-content { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
     .testimoni-stars { color: var(--red); font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
-    .testimoni-quote { font-family: 'Archivo', sans-serif; font-size: 20px; font-weight: 600; line-height: 1.4; margin-bottom: 24px; color: var(--ink); }
-    .testimoni-quote::before { content: '\201C'; font-size: 64px; color: var(--red); line-height: 0; vertical-align: -20px; margin-right: 4px; }
+    .testimoni-quote { font-family: 'Archivo', sans-serif; font-size: 17px; font-weight: 600; line-height: 1.45; margin-bottom: 18px; color: var(--ink); }
+    .testimoni-quote::before { content: '\201C'; font-size: 46px; color: var(--red); line-height: 0; vertical-align: -15px; margin-right: 3px; }
     .testimoni-author { display: flex; align-items: center; gap: 12px; }
     .author-avatar {
       width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--red), var(--red-dark));
@@ -603,27 +606,43 @@
           </div>
           <div class="testimoni-track" id="testimoniTrack">
             <div class="testimoni-slide active">
-              <div class="testimoni-stars">★★★★★</div>
-              <div class="testimoni-quote">Prosesnya cepat banget. Dari konsultasi sampai Xpander saya dikirim cuma seminggu, dan dibantu pilih cicilan yang ringan. Recommended!</div>
-              <div class="testimoni-author">
-                <div class="author-avatar">R</div>
-                <div><div class="author-name">Rangga P.</div><div class="author-meta">Xpander Ultimate · 2025</div></div>
+              <div class="testi-photo"><img src="testi1.jpg" alt="Penyerahan Mitsubishi Destinator" loading="lazy"></div>
+              <div class="testi-content">
+                <div class="testimoni-stars">★★★★★</div>
+                <div class="testimoni-quote">Akhirnya Destinator idaman keluarga sampai di rumah. Prosesnya cepat dan dibantu sampai tuntas — terima kasih Atmy!</div>
+                <div class="testimoni-author"><div><div class="author-name">Warga Mitsubishi Baru</div><div class="author-meta">Destinator · Tangerang</div></div></div>
               </div>
             </div>
             <div class="testimoni-slide">
-              <div class="testimoni-stars">★★★★★</div>
-              <div class="testimoni-quote">Sempat ragu soal kredit, tapi Atmy sabar jelasin simulasinya sampai paham. DP ringan, approval cepat. Pajero Sport akhirnya jadi punya saya.</div>
-              <div class="testimoni-author">
-                <div class="author-avatar">S</div>
-                <div><div class="author-name">Sari W.</div><div class="author-meta">Pajero Sport Dakar · 2025</div></div>
+              <div class="testi-photo"><img src="testi2.jpg" alt="Penyerahan Mitsubishi Colt Diesel" loading="lazy"></div>
+              <div class="testi-content">
+                <div class="testimoni-stars">★★★★★</div>
+                <div class="testimoni-quote">Nambah armada Colt Diesel untuk operasional. Pengurusannya rapi, cepat, dan unit langsung siap kerja.</div>
+                <div class="testimoni-author"><div><div class="author-name">Armada Trijaya Union</div><div class="author-meta">Colt Diesel · Fleet</div></div></div>
               </div>
             </div>
             <div class="testimoni-slide">
-              <div class="testimoni-stars">★★★★★</div>
-              <div class="testimoni-quote">Beli L300 buat usaha, after sales-nya yang bikin tenang. Servis gampang, sparepart ready. Pasti balik lagi kalau nambah armada.</div>
-              <div class="testimoni-author">
-                <div class="author-avatar">H</div>
-                <div><div class="author-name">Hendra K.</div><div class="author-meta">L300 Pick-up · 2024</div></div>
+              <div class="testi-photo"><img src="testi3.jpg" alt="Penyerahan Mitsubishi Colt Diesel" loading="lazy"></div>
+              <div class="testi-content">
+                <div class="testimoni-stars">★★★★★</div>
+                <div class="testimoni-quote">Colt Diesel-nya tangguh untuk usaha, dan after sales-nya bikin tenang. Pasti balik lagi kalau nambah unit!</div>
+                <div class="testimoni-author"><div><div class="author-name">Pelanggan Usaha</div><div class="author-meta">Colt Diesel · Niaga</div></div></div>
+              </div>
+            </div>
+            <div class="testimoni-slide">
+              <div class="testi-photo"><img src="testi4.jpg" alt="Penyerahan Mitsubishi Pajero Sport" loading="lazy"></div>
+              <div class="testi-content">
+                <div class="testimoni-stars">★★★★★</div>
+                <div class="testimoni-quote">Pajero Sport impian akhirnya terwujud, dapat bonus pula. Pelayanan Atmy ramah dan jujur dari awal sampai serah terima.</div>
+                <div class="testimoni-author"><div><div class="author-name">Keluarga Bahagia</div><div class="author-meta">Pajero Sport · 2026</div></div></div>
+              </div>
+            </div>
+            <div class="testimoni-slide">
+              <div class="testi-photo"><img src="testi5.jpg" alt="Penyerahan Mitsubishi Xforce" loading="lazy"></div>
+              <div class="testi-content">
+                <div class="testimoni-stars">★★★★★</div>
+                <div class="testimoni-quote">Xforce-nya keren dan nyaman buat harian. Dibantu pilih unit sampai proses kreditnya beres. Recommended!</div>
+                <div class="testimoni-author"><div><div class="author-name">Pelanggan Baru</div><div class="author-meta">Xforce · 2026</div></div></div>
               </div>
             </div>
           </div>
@@ -631,6 +650,8 @@
             <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
             <button class="dot" data-slide="1" aria-label="Slide 2"></button>
             <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+            <button class="dot" data-slide="3" aria-label="Slide 4"></button>
+            <button class="dot" data-slide="4" aria-label="Slide 5"></button>
           </div>
         </div>
       </div>
@@ -801,7 +822,7 @@
         id:'destinator', seg:'passenger', body:'suv', name:'Destinator', cat:'Premium Family SUV',
         badge:'BARU', photo:PHOTO.destinator,
         tagline:'Confidence Booster for Energetic Family',
-        priceFrom:'Rp397 Juta', priceNote:'OTR Jabodetabek · GLS. Tipe 55th Anniversary hingga Rp527,5 Jt.',
+        priceFrom:'Rp396 Juta', priceNote:'OTR 2026 · GLS AT. Hingga Rp529 Jt (55th Anniversary Edition).',
         desc:'SUV 7-penumpang terbaru Mitsubishi, peraih Car of The Year 2025. Memadukan mesin turbo bertenaga, kabin lapang berkelas, dan teknologi keselamatan Diamond Sense untuk perjalanan keluarga yang percaya diri.',
         chips:[
           {icon:'engine', label:'Mesin Turbo 1.5L', detail:'Mesin bensin turbo 1.5L bertenaga namun tetap efisien, dipadukan transmisi CVT yang halus untuk akselerasi responsif di kota maupun tanjakan.'},
@@ -814,7 +835,7 @@
         id:'xforce', seg:'passenger', body:'compact', name:'Xforce', cat:'SUV Compact',
         badge:'POPULER', photo:PHOTO.xforce,
         tagline:'Keamanan & Gaya dalam Setiap Aksi',
-        priceFrom:'Rp388 Juta', priceNote:'OTR Jabodetabek · Exceed CVT. Hingga Rp434 Jt untuk 55th Anniversary.',
+        priceFrom:'Rp392 Juta', priceNote:'OTR 2026 · Exceed. Hingga Rp436 Jt (55th Anniversary Edition).',
         desc:'SUV compact futuristik dengan desain berani dan ground clearance tinggi. Ringkas untuk kota, tetap percaya diri di jalan tak rata — lengkap dengan audio Dynamic Sound Yamaha yang ikonik.',
         chips:[
           {icon:'sound', label:'Dynamic Sound Yamaha', detail:'8 speaker hasil kolaborasi dengan Yamaha, dengan 4 mode suara (Lively, Signature, Powerful, Relaxing) — serasa konser di dalam kabin.'},
@@ -827,7 +848,7 @@
         id:'pajero', seg:'passenger', body:'suv', name:'Pajero Sport', cat:'SUV Ladder Frame',
         badge:null, photo:null,
         tagline:'Live the Adventure',
-        priceFrom:'Rp591 Juta', priceNote:'OTR Jakarta · Exceed 4x2. Flagship Dakar Ultimate 4x4 Rp794 Jt.',
+        priceFrom:'Rp596,5 Juta', priceNote:'OTR 2026 · Exceed 4x2 MT. Flagship Dakar Ultimate 4x4 AT Rp796 Jt.',
         desc:'Ikon SUV tangguh Mitsubishi. Sasis ladder frame, mesin diesel turbo bertenaga, dan sistem 4WD Super Select menjadikannya andalan untuk petualangan jauh sekaligus kemewahan harian.',
         chips:[
           {icon:'engine', label:'Diesel Turbo 2.4L', detail:'Mesin diesel MIVEC 2.4L bertenaga besar dengan torsi melimpah — kuat menanjak dan menarik beban berat.'},
@@ -840,7 +861,7 @@
         id:'xpander-cross', seg:'passenger', body:'cross', name:'Xpander Cross', cat:'MPV Crossover',
         badge:null, photo:null,
         tagline:"Don't Stop, Xpand Your Adventure",
-        priceFrom:'Rp343 Juta', priceNote:'OTR Jakarta. Tipe Premium CVT hingga Rp369,2 Jt.',
+        priceFrom:'Rp350 Juta', priceNote:'OTR 2026 · MT. Premium CVT Rp376,2 Jt.',
         desc:'Xpander dengan jiwa petualang. Ground clearance lebih tinggi, body cladding kokoh, dan tampilan rugged — MPV keluarga yang siap diajak keluar dari rutinitas.',
         chips:[
           {icon:'mountain', label:'Stance Lebih Tinggi', detail:'Ground clearance ditinggikan plus pelindung body rugged, lebih percaya diri di jalan rusak dan medan ringan.'},
@@ -853,7 +874,7 @@
         id:'xpander', seg:'passenger', body:'mpv', name:'Xpander', cat:'MPV Keluarga',
         badge:null, photo:null,
         tagline:'Be The Life Xpander',
-        priceFrom:'Rp270 Juta', priceNote:'OTR Jakarta · GLS M/T. Tipe Ultimate hingga ~Rp320 Jt.',
+        priceFrom:'Rp282,1 Juta', priceNote:'OTR 2026 · GLS MT. Hingga Rp350 Jt (Ultimate CVT).',
         desc:'MPV keluarga terlaris yang menyeimbangkan kabin luas, desain modern, dan biaya pemakaian yang ramah. Pilihan cerdas untuk mobilitas keluarga Indonesia sehari-hari.',
         chips:[
           {icon:'seat', label:'Kabin Luas 7-Seater', detail:'Ruang kaki lega di tiga baris dan akses masuk yang mudah — nyaman untuk keluarga besar maupun perjalanan panjang.'},
@@ -866,7 +887,7 @@
         id:'triton', seg:'commercial', body:'pickup', name:'Triton', cat:'Double Cabin Pick-up',
         badge:'BARU', photo:PHOTO.triton,
         tagline:'Nyalakan Jiwa Petualangmu',
-        priceFrom:'Rp323 Juta', priceNote:'OTR Jabodetabek · Single Cab GLX. Ultimate 4x4 AT hingga Rp571,5 Jt.',
+        priceFrom:'Rp346,15 Juta', priceNote:'OTR 2026 · Single Cab GLX 4x2. Ultimate 4x4 AT Rp572,5 Jt.',
         desc:'All New Triton, double cabin generasi terbaru yang kuat sekaligus canggih. Mesin diesel bertenaga, sistem 4WD modern, dan kabin nyaman untuk kerja keras maupun gaya hidup.',
         chips:[
           {icon:'engine', label:'Diesel 2.4L · 181 HP', detail:'Mesin turbo diesel 2.4L menghasilkan 181 HP dan torsi 430 Nm — bertenaga untuk muatan berat dan medan menantang.'},
@@ -879,7 +900,7 @@
         id:'l300', seg:'commercial', body:'smallpickup', name:'L300', cat:'Pick-up Niaga',
         badge:null, photo:null,
         tagline:'Andalan Sejati untuk Usaha',
-        priceFrom:'Rp246 Juta', priceNote:'Estimasi OTR. Bervariasi menurut wilayah & karoseri.',
+        priceFrom:'Rp268,5 Juta', priceNote:'OTR 2026 · Cabin Chassis. Pick-up FD Rp273,5 Jt.',
         desc:'Pick-up legendaris yang jadi tulang punggung jutaan usaha di Indonesia. Mesin diesel common-rail yang irit dan bandel, bak lebar, serta biaya perawatan ringan.',
         chips:[
           {icon:'engine', label:'Diesel Common-Rail', detail:'Mesin diesel modern yang lebih irit dan bertenaga, tetap mewarisi ketangguhan dan keawetan khas L300.'},
