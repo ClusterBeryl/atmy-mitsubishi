@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atmy-mitsubishi.vercel.app/sitemap.xml
+Sitemap: https://www.dealer-mitsubishi-tangerang.com/sitemap.xml
